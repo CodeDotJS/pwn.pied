@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# pied
+.pied-cache/
+
+# macOS, Windows, and editor files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Secrets and key material. pied does not store these; this keeps an accidental copy out.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+secrets.json
+
+# Scans of this machine. A host report names home-directory paths, interpreters,
+# and which local trust stores still contain the compromised roots.
+# Public repository smoke scans under research/sources/ stay in the tree.
+research/host-scan.txt
+research/local/
+*-host-scan.txt
+*-host-scan.json
+/host-scan.txt
+/host-scan.json
+/report.txt
+/report.json
