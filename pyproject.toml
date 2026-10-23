@@ -1,0 +1,17 @@
+[project]
+name = "pied"
+version = "1.0.0"
+description = "Read-only scanner for the October 2026 eMudhra CA incident and the Node.js security release."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "pied"}]
+
+[project.scripts]
+pied = "pied.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
