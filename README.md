@@ -33,8 +33,6 @@ cd pwn.pied-main
 ./bin/pied --version
 ```
 
-Those URLs are the public `main` branch. A private repository will not serve them; clone it instead.
-
 ### Clone and run locally
 
 ```bash
@@ -122,7 +120,7 @@ In a terminal the severity words are colored: critical and high are red, medium 
 # Any other checkout on disk. Replace the path.
 ./bin/pied scan --path /path/to/project
 
-# Public repositories. These three were clean on 23 Oct 2026.
+# Public repositories.
 ./bin/pied scan --repo certifi/python-certifi
 ./bin/pied scan --repo expressjs/express
 ./bin/pied scan --org psf --repo requests
@@ -216,6 +214,6 @@ Copyright © 2026 [Rishi Giri](https://rishi.rest)
 
 <br>
 
-DETRO is released under the [MIT License](LICENSE)
+pwn.pied is released under the [MIT License](LICENSE)
 
 </div>

@@ -22,8 +22,6 @@ cd pwn.pied-main
 ./bin/pied --version
 ```
 
-Those URLs are the public `main` branch. A private repository will not serve them; clone it instead.
-
 ### Clone and run locally
 
 ```bash
@@ -112,15 +110,13 @@ Exit 0 means the manifests that were read do not pin a vulnerable release. It do
 
 Where: GitHub, read through the API. No clone. A token is optional until the unauthenticated rate limit. `GH_TOKEN`, `GITHUB_TOKEN`, or `gh auth token` are used when set.
 
-These three were clean when this file was written (23 October 2026):
-
 ```bash
 ./bin/pied scan --repo certifi/python-certifi
 ./bin/pied scan --repo expressjs/express
 ./bin/pied scan --org psf --repo requests
 ```
 
-`--repo` is `owner/name`, or a bare name together with `--org`. Expect exit 0 and a file count on the summary line. A later commit in those repositories can change the result.
+`--repo` is `owner/name`, or a bare name together with `--org`.
 
 ## 5. Several repositories
 
