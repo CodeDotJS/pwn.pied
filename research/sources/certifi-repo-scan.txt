@@ -1,0 +1,7 @@
+pied 1.0.0   advisories as of 2026-10-23
+
+certifi/python-certifi
+  clean    no vulnerable pins or trust anchors in the files that were read
+
+summary  critical 0  high 0  medium 0  low 0  info 0  ok 0  files 7  targets 1
+pied reads versions and certificate fingerprints. It does not change trust stores, install packages, or contact the public demonstration hosts.
