@@ -108,7 +108,20 @@ Exit 0 means the manifests that were read do not pin a vulnerable release. It do
 
 ## 4. One public repository
 
-Where: GitHub, read through the API. No clone. A token is optional until the unauthenticated rate limit. `GH_TOKEN`, `GITHUB_TOKEN`, or `gh auth token` are used when set.
+Where: GitHub, read through the API. No clone. A token is optional until the unauthenticated rate limit.
+
+pied reads `GH_TOKEN`, then `GITHUB_TOKEN`, then `gh auth token`. Log in once and pied picks the credential up itself:
+
+```bash
+gh auth login
+gh auth status
+```
+
+Or export a personal access token in the same shell. Create it at <https://github.com/settings/personal-access-tokens>, with Contents set to Read-only (fine-grained) or the `repo` scope (classic). Authorize it for the organization when that organization uses SAML single sign-on.
+
+```bash
+export GH_TOKEN=github_pat_...
+```
 
 ```bash
 ./bin/pied scan --repo certifi/python-certifi

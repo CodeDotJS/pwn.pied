@@ -68,7 +68,27 @@ pied --version
 
 pied reads repository metadata and manifest files through the GitHub API. It does not clone the repository.
 
-A token is resolved in this order: `GH_TOKEN`, `GITHUB_TOKEN`, then `gh auth token` after `gh auth login`. Public repositories can be scanned with no token until GitHub's unauthenticated rate limit. A private repository or an organization scan needs a token that can read repository contents. The `repo` scope covers private repositories.
+Public repositories can be scanned with no token until GitHub's unauthenticated rate limit. A private repository or an organization scan needs a token that can read repository contents.
+
+pied looks for that token in this order: the `GH_TOKEN` environment variable, then `GITHUB_TOKEN`, then the credential from `gh auth token`.
+
+Log in with the GitHub CLI once. pied reads that credential on its own:
+
+```bash
+gh auth login
+gh auth status
+```
+
+`gh auth status` lists the scopes on that login. A private repository needs `repo`. A public scan only needs the login, which raises the rate limit.
+
+To hand pied a personal access token instead, export it in the same shell:
+
+```bash
+export GH_TOKEN=github_pat_...
+./bin/pied scan --repo owner/name
+```
+
+Create the token at <https://github.com/settings/personal-access-tokens>. For a fine-grained token, set repository access to the repositories you will scan and set Contents to Read-only. A classic token needs the `repo` scope. If the organization uses SAML single sign-on, open the token and authorize it for that organization. `GITHUB_TOKEN` is accepted as the same value, which is the name GitHub Actions already sets. The variable stays in the environment. Do not write it into the repository.
 
 Forks and archived repositories are skipped unless you pass `--include-forks` or `--include-archived`. `--max-repos 5` stops an organization scan early, which is the right first run on a large org.
 
