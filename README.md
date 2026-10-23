@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="media/crab.svg" alt="pied" width="160" />
+  <img src="media/brot.gif" width="128" alt="DETRO" />
 </p>
 
 <h1 align="center">pied</h1>
@@ -195,3 +195,27 @@ Affected lines, the rationale for each floor, and what pied deliberately does no
 ## Archive
 
 `setup.md` has every scan variation, where to point it, and what exit code to expect. Research notes, fingerprints, and screenshots are in `research/`. A host report from the machine where this was built stays in `research/host-scan.txt` and is gitignored. The design note is `docs/plans/2026-10-23-pied-design.md`. The advisory catalog is `docs/ADVISORIES.md`.
+
+---
+
+<br>
+
+<div align="center">
+
+<p align="center">
+  <img src="media/crab.svg" alt="pied" width="160" />
+</p>
+
+
+
+__License__
+
+<br>
+
+Copyright © 2026 [Rishi Giri](https://rishi.rest)
+
+<br>
+
+DETRO is released under the [MIT License](LICENSE)
+
+</div>
